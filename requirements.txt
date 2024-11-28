@@ -1,0 +1,15 @@
+# PyTorch and TorchVision
+torch
+torchvision
+
+# FastAPI and Uvicorn
+fastapi==0.100.0
+uvicorn[standard]==0.22.0
+python-multipart
+
+# Image Processing
+Pillow
+opencv-python
+
+# TensorBoard for logging
+tensorboard
