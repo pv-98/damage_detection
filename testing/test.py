@@ -1,4 +1,3 @@
-# evaluation/visualize_predictions.py
 
 import os
 import torch
@@ -12,7 +11,7 @@ from data.transforms import get_transform
 import json
 from tqdm import tqdm
 
-# Import the evaluation functions from evaluation_metrics
+
 from evaluation_metrics import get_coco_results, compute_coco_metrics, COCO
 
 # Define a mapping from label indices to class names
@@ -38,7 +37,7 @@ def visualize_predictions(model, data_loader, device, num_images=5, threshold=0.
         device (torch.device): Device to perform computations on.
         num_images (int, optional): Number of images to visualize. Defaults to 5.
         threshold (float, optional): Confidence threshold for displaying predictions. Defaults to 0.5.
-        save_dir (str, optional): Directory to save the visualizations. If None, images are displayed. Defaults to None.
+        save_dir (str, optional): Directory to save the visualizations.
     """
     model.eval()
     images_so_far = 0
@@ -53,7 +52,7 @@ def visualize_predictions(model, data_loader, device, num_images=5, threshold=0.
 
             for i in range(len(images)):
                 if images_so_far >= num_images:
-                    return  # Display only the specified number of images
+                    return  
 
                 img = images[i].cpu().numpy()
                 img = np.transpose(img, (1, 2, 0))  # Convert from (C, H, W) to (H, W, C)
@@ -88,7 +87,7 @@ def visualize_predictions(model, data_loader, device, num_images=5, threshold=0.
 
                 images_so_far += 1
                 if images_so_far >= num_images:
-                    break  # Exit after logging the desired number of images
+                    break  
 
 def draw_boxes(image, boxes, labels, scores):
     """
@@ -177,7 +176,7 @@ def main():
     for metric, value in metrics.items():
         print(f"{metric}: {value:.4f}")
 
-    # Optionally, save metrics to a JSON file
+    # save metrics to a JSON file
     metrics_path = os.path.join(config.OUTPUT_DIR, 'evaluation_metrics.json')
     with open(metrics_path, 'w') as f:
         json.dump(metrics, f, indent=4)
