@@ -16,5 +16,5 @@ COPY . .
 # Expose the port FastAPI will run on
 EXPOSE 8000
 
-# Command to run the app using uvicorn
-CMD ["uvicorn", "inference.app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+CMD ["python", "main.py", "--serve" ,"--host", "0.0.0.0", "--port", "8000"]
