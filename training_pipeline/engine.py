@@ -40,7 +40,7 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, writer, print_
 
         # Forward pass the model to get the losses
         loss_dict = model(images, targets)
-        print(f'losses:{loss_dict}')
+        #print(f'losses:{loss_dict}')
         losses = sum(loss for loss in loss_dict.values())
 
         # Backward pass and optimization
