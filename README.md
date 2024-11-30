@@ -33,7 +33,7 @@ The outputs are saved in the output directory along with visualizations
 This endpoint accepts an image file and returns predictions for objects detected in the image. The predictions include bounding boxes, labels, and confidence scores for each detected object.
 
 #### Request
-- [**URL**: /predict/](https://damage-detection-447027078795.us-central1.run.app/predict/)
+- **URL**:[(https://damage-detection-447027078795.us-central1.run.app/predict/)]
 - **Method**: POST
 - **Content-Type**: multipart/form-data
 
@@ -51,20 +51,10 @@ Can also use Postman to give request
 #### Response
 - **Content-Type**: application/json
 - **Body**:
-  - predictions: A list of prediction objects, each containing:
-    - 
-
-box
-
-: A list of four float values representing the coordinates of the bounding box [x_min, y_min, x_max, y_max].
-    - 
-
-label
-
-: The label of the detected object.
-    - 
-score
-: The confidence score of the prediction.
+predictions: A list of prediction objects, each containing:
+box: A list of four float values representing the coordinates of the bounding box [x_min, y_min, x_max, y_max].
+label: The label of the detected object.
+score: The confidence score of the prediction.
 
 #### Example Response
 ```json
