@@ -37,16 +37,14 @@ This endpoint accepts an image file and returns predictions for objects detected
 - **Method**: POST
 - **Content-Type**: multipart/form-data
 
-file
+file: The image file to be analyzed. This should be provided as a form-data file upload.
 
-: The image file to be analyzed. This should be provided as a form-data file upload.
-
-#### Example Request
+#### Example Request using Windows Powershell
 ```bash
-curl -X POST "https://damage-detection-447027078795.us-central1.run.app/predict/" -F "file=@path_to_your_image.jpg"
+curl.exe -X POST "https://damage-detection-447027078795.us-central1.run.app/predict/" -F "file=@path_to_your_image.jpg"
 ```
 
-Can also use Postman to give request
+
 
 #### Response
 - **Content-Type**: application/json
@@ -59,14 +57,18 @@ score: The confidence score of the prediction.
 #### Example Response
 ```json
 {
-  "predictions": [
-    {
-      "box": [34.5, 23.4, 123.4, 234.5],
-      "label": "minor-scratch",
-      "score": 0.95
-    }
-    
-  ]
+    "predictions": [
+        {
+            "box": [
+                121.8379898071289,
+                146.30760192871094,
+                638.38134765625,
+                490.4845886230469
+            ],
+            "label": "severe-broken",
+            "score": 0.5068358778953552
+        }
+    ]
 }
 ```
 
