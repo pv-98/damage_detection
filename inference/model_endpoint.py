@@ -78,7 +78,11 @@ async def predict(file: UploadFile = File(...)):
                 'label': CLASS_NAMES[label],
                 'score': float(score)
             })
-    return {'predictions': output}
+    if output:
+        return {'predictions': output}
+    
+    else:
+        return {'message': 'Detected damage has a confidence less than threshold' }
 
 # Run the app (if running directly)
 if __name__ == "__main__":
