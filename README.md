@@ -2,19 +2,19 @@
 
 ## Directory Structure
 The directory structure of the dataset should look like,
-<p>-Root <br>
-    -Vehicle_Damage_Detection_Dataset<br>
-        -Images<br>
-            -Train<br>
-                image1.jpg..<br>
-            -Val<br>
-                image1.jpg..<br>
-            -Test<br>
-                image1.jpg..<br>
-        -Annotations<br>
-            instances_train.json<br>
-            instances_test.json<br>
-            instances_val.json </p>
+*Root 
+    *Vehicle_Damage_Detection_Dataset
+        *Images
+            *Train
+                *image1.jpg..
+            *Val
+                *image1.jpg..
+            *Test
+                *image1.jpg..
+        *Annotations
+            *instances_train.json
+            *instances_test.json
+            *instances_val.json 
 ## Use of the Repository
 1. Install the dependencies after cloning the repo by running the command `pip install -r requirements.txt`.
 2. To perform the training, run the command, `python main.py --train`.
