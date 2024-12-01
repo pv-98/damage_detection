@@ -154,7 +154,7 @@ def main():
     )
 
     # Initialize the model and load the trained weights
-    model = get_model('faster_rcnn', config.NUM_CLASSES, pretrained=False, device=config.DEVICE)
+    model = get_model(config.model_name, config.NUM_CLASSES, pretrained=False, device=config.DEVICE)
     model.load_state_dict(torch.load(config.MODEL_PATH, map_location=device))
     model.to(device)
 
