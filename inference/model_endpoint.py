@@ -1,4 +1,3 @@
-# inference/app.py
 
 import io
 import os
@@ -8,7 +7,7 @@ from PIL import Image
 from torchvision import transforms
 import uvicorn
 
-# Import your model and configuration
+
 from models.get_model import get_model
 import config
 #from lensor_new.models import get_model
