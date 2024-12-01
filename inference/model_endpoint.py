@@ -24,7 +24,7 @@ def get_model_path():
 
 # Load the trained model
 def load_model(num_classes, model_path, device):
-    model = get_model('faster_rcnn', num_classes, pretrained=False)
+    model = get_model(config.model_name, num_classes, pretrained=False)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()
