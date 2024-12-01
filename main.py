@@ -1,9 +1,9 @@
 
 
-# from training_pipeline.train import main as train_main
+
 from training_pipeline.train import main as train_main
 from testing.test import main as eval_main
-from inference.model_endpoint import app  
+#from inference.model_endpoint import app  
 
 import uvicorn
 import argparse
@@ -22,6 +22,7 @@ if __name__ == "__main__":
     if args.evaluate:
         eval_main()
     if args.serve:
+        from inference.model_endpoint import app
         uvicorn.run(app, host='0.0.0.0', port=8000)
     if not (args.train or args.evaluate or args.serve):
         print("Please specify --train and/or --evaluate and/or --serve")
